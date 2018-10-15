@@ -1,0 +1,4 @@
+#!/bin/bash
+TOOL_DIR=$( cd $(dirname $0);pwd )
+
+${TOOL_DIR}/ldapsearch --terse --dontWrap -b "$1" -s base '(&)'| grep -v ^#

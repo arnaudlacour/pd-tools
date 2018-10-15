@@ -1,0 +1,12 @@
+#!/bin/bash
+TOOL_DIR=$( cd $(dirname $0);pwd )
+
+file=/tmp/entry.${RANDOM}
+${TOOL_DIR}/cat $* > ${file}.orig
+cp ${file}.orig ${file}.new
+vi ${file}.new
+${TOOL_DIR}/ldif-diff --sourceLDIF ${file}.orig --targetLDIF ${file}.new --outputLDIF ${file}.mods
+echo "Computed modifications:"
+cat ${file}.mods
+${TOOL_DIR}/ldapmodify -a -c < ${file}.mods
+
