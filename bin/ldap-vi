@@ -30,7 +30,7 @@ TOOL_NAME=$(basename $0)
 TOOL_DIR=$( cd $(dirname $0);pwd )
 
 file=/tmp/entry.${RANDOM}
-${TOOL_DIR}/cat $* > ${file}.orig
+${TOOL_DIR}/ldap-cat $* > ${file}.orig
 if test $? -eq 0 ; then
     cp ${file}.orig ${file}.new
     vi ${file}.new
