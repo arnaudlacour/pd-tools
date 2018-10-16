@@ -4,6 +4,8 @@ This project captures files that can make day to day operations on the Ping tool
 # Assumptions
 The main assumption that is made by these tools is that `config/tools.properties` file is populated such that ldpasearch, ldapmodify and ldapdelete will not prompt for connection information.
 
+Another assumption is that these tools be installed (copied) to the server root bin/ directory.
+
 # Examples
 ## Listing (similar to Unix ls)
 Getting the base entry:
