@@ -1,4 +1,0 @@
-#!/bin/bash
-TOOL_DIR=$( cd $(dirname $0);pwd )
-
-${TOOL_DIR}/ldapsearch -b "$1" -s one '(&)' 1.1 |grep ^dn|sed 's/^dn: //' 
